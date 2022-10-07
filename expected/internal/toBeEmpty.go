@@ -4,27 +4,7 @@ import "reflect"
 
 // isEmpty checks whether a value is empty.
 func isEmpty(v any) bool {
-	// (1) check
-	empty := v == nil
-
-	if !empty {
-		value := reflect.ValueOf(v)
-
-		switch value.Kind() {
-		case reflect.Slice, reflect.Map, reflect.Chan:
-			empty = value.Len() == 0
-		case reflect.Ptr:
-			if empty = value.IsNil(); !empty {
-				empty = isEmpty(value.Elem().Interface())
-			}
-		default:
-			zero := reflect.Zero(value.Type())
-			empty = reflect.DeepEqual(v, zero.Interface())
-		}
-	}
-
-	// (2) return result
-	return empty
+	return reflect.ValueOf(v).Len() == 0
 }
 
 // ToBeEmpty checks whether the wrapper value is empty.
