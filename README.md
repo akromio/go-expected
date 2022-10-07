@@ -2,5 +2,10 @@
 
 Assertion library developed for the Akromio project.
 
-*Product of Spain, made in Valencia by Sia Codelabs.*
+_Product of Spain, made in Valencia by Sia Codelabs._
 
+## Environment preparation for working
+
+```bash
+git config --local core.hooksPath .githooks
+```

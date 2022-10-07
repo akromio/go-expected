@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+files=$(gofmt -l -w .)
+
+if [ "$files" != '' ]; then
+  printf "The following files have been modified: ${files/$'\n'/, }\n"
+  exit 1
+fi
