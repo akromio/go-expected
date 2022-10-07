@@ -7,5 +7,6 @@ _Product of Spain, made in Valencia by Sia Codelabs._
 ## Environment preparation for working
 
 ```bash
-git config --local core.hooksPath .githooks
+$ git config --local core.hooksPath .githooks
+$ chmod u+x .githooks/*
 ```
